@@ -4,7 +4,13 @@ Some text
 
 ** Subsection underscore
 
+safdaskdfasdf
+
+text
+
 More text about things and code example:
+
+some additional text
 
 #+begin_src nim
 echo 12
@@ -12,3 +18,11 @@ echo 12
 
 #+RESULTS:
 : 12
+
+** Subsection 12
+
+sdfasdf
+
+*** Subs subwerawf
+
+2134wfe
