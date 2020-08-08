@@ -2,7 +2,7 @@
 
 Some text
 
-** Subsection
+** Subsection underscore
 
 More text about things and code example:
 

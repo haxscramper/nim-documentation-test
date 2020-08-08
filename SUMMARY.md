@@ -1,1 +1,1 @@
-- [[file:#subsection][Subsection]]
+* [Subsection underscore](build/subsection-underscore.md)
