@@ -1,0 +1,87 @@
+==========
+Page title
+==========
+
+
+.. contents::
+
+
+
+1 Main page for documentation
+-----------------------------
+
+1.1 String interpolation
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+1.1.1 Strformat
+^^^^^^^^^^^^^^^
+
+.. code:: nim
+
+    import strformat
+
+    let varname = "World"
+    echo &"Hello {varname}"
+    #            ^^^^^^^
+    #            |
+    #            Identifier must be defined at compile-time
+
+    echo fmt("Some {varname} value\t000") # The same as `&`
+    echo fmt"Some {varname} value\t000"
+    #    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    #    |
+    #    No braces or spaces around string - it will be treated as
+    #    raw string literal
+
+::
+
+    Hello World
+    Some World value	000
+    Some World value\t000
+
+1.1.2 Strtabs
+^^^^^^^^^^^^^
+
+.. code:: nim
+
+    import strtabs
+
+    let tbl = {"key" : "value"}.newStringTable()
+    echo "Hello ${key}" % tbl
+    #             ^^^
+    #             |
+    #             Key can be selected at runtime
+
+::
+
+    Hello value
+
+1.1.3 Strutils
+^^^^^^^^^^^^^^
+
+.. code:: nim
+
+    import strutils
+
+    # Interpolation using indexed placeholders
+    echo "$2 $2 some random text $1" % ["hello", "???"]
+    #     ^^^^^
+    #     |
+    #     Can repeat the same placeholder multiple times
+
+    echo "$key1 Some values $key2" % ["key1", "VAL1", "KeY2", "VAL2"]
+    #                                 ^^^^^^^^^^^^^^  ^^^^^^
+    #                                 |               |
+    #                                 |               Comparison in case-insensetive
+    #                                 Odd idx - key, even idx - value
+
+    echo format("$1 Hello $1, $2", (1, 2, 3), "Worlr")
+    #                              ^^^^^^^^^
+    #                              |
+    #                              `format` supports argument stringification
+
+::
+
+    ??? ??? some random text hello
+    VAL1 Some values VAL2
+    (1, 2, 3) Hello (1, 2, 3), Worlr

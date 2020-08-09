@@ -10,6 +10,8 @@ https://bitbucket.org/cskeeters/rst2html-style/
 Modified by Boyd Greenfield and narimiran
 */
 
+@import url("user-css.css");
+
 :root {
   --primary-background: #fff;
   --secondary-background: ghostwhite;
