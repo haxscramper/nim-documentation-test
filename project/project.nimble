@@ -11,3 +11,11 @@ srcDir        = "src"
 # Dependencies
 
 requires "nim >= 1.2.6"
+requires "hdocgen"
+
+import hdocgen
+
+let url = "https://haxscramper.github.io/nim-documentation-test"
+
+task test, "HEllo tasks":
+  docgenBuild(url, "../")

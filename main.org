@@ -29,7 +29,7 @@ sdfasdf
 
 ** Another subsection
 
-#+begin_src nim
+#+begin_src nim :exports both
 import strformat
 
 echo &"asfd {12 + 23 + (12 * 2)}"
